@@ -1,0 +1,24 @@
+{
+  "name": "GamerTheme",
+  "version": "0.0.0",
+  "description": "Theme for Gamer",
+  "main": "gulp.js",
+  "scripts": {
+    "test": "echo \"Error\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Arijeet-webonise/drupalThemeTry.git"
+  },
+  "keywords": [
+    "Gamer"
+  ],
+  "author": "Arijeet Baruah",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/Arijeet-webonise/drupalThemeTry/issues"
+  },
+  "dependencies": {
+    "gulp-install": "~1.1.0"
+  }
+}

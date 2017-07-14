@@ -1,0 +1,28 @@
+name: Gamer Theme
+type: theme
+description: 'Custom Theme for Gamer.'
+core: 8.x
+libraries:
+  - gamer_theme/global-styling
+  - gamer_theme/bootstrap-styling
+regions:
+  header: Header
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar Second'
+  primary_menu: 'Primary Menu'
+  primary_menu_right: 'Primary Menu Right'
+  breadcrumb: 'Breadcrumb'
+  footer1: Footer1
+  footer2: Footer2
+  footer3: Footer3
+  footer4: Footer4
+features:
+  - comment_user_verification
+  - comment_user_picture
+  - favicon
+  - logo
+  - node_user_picture
+stylesheets-remove:
+  - '@classy/css/components/tabs.css'
+  - core/assets/vendor/normalize-css/normalize.css

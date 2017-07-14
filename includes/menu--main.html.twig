@@ -1,0 +1,61 @@
+{% import _self as menus %}
+{% import _self as menus %}
+
+{{ menus.menu_links(items, attributes, 0, menu_name) }}
+
+{% macro menu_links(items, attributes, menu_level, menu_name) %}
+  {% import _self as menus %}
+
+  {%
+    set menu_classes = [
+      'nav',
+      'navbar-nav',
+      'w3-menu-' ~ menu_name|clean_class,
+    ]
+  %}
+  {%
+    set submenu_classes = [
+      'dropdown-menu',
+      'w3-menu-0-' ~ menu_name|clean_class ~ '__submenu w3-mobile',
+    ]
+  %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul id="main-menu" {{ attributes.addClass(menu_classes) }}>
+    {% else %}
+      <ul id="main-menu-inner" {{ attributes.removeClass(menu_classes).addClass(submenu_classes) }}>
+    {% endif %}
+    {% for item in items %}
+      {%
+        set item_classes = [
+          'w3-bar',
+          'w3-mobile',
+          'w3-padding-0',
+          'w3-menu-' ~ menu_name|clean_class ~ '__item',
+          item.is_expanded ? 'w3-menu-' ~ menu_name|clean_class ~ '__item--expanded',
+          item.is_collapsed ? 'w3-menu-' ~ menu_name|clean_class ~ '__item--collapsed',
+          item.in_active_trail ? 'w3-menu-' ~ menu_name|clean_class ~ '__item--active-trail',
+        ]
+      %}
+      {%
+        set link_classes = [
+          'w3-menu-' ~ menu_name|clean_class ~ '__link w3-block w3-button w3-left-align w3-padding-large',
+        ]
+      %}
+      <li{{ item.attributes.addClass(item_classes) }}>
+        {{
+          link(
+            item.title,
+            item.url,
+            item.attributes.removeClass(item_classes).addClass(link_classes)
+          )
+        }}
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_name) }}
+          <span class="caret"></span>
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

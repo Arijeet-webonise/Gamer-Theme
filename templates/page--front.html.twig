@@ -1,0 +1,127 @@
+<div class="layout-container">
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+			  	<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			</ol>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+			    <div class="item active">
+			    	<img src="{{ sliderimg1 }}" alt="{{ slideralt1 }}">
+                    <!-- Static Header -->
+                    <div class="header-text hidden-xs">
+                        <div class="col-md-12 text-center">
+                            <h2>
+                            	<span style="background-color: {{ sliderTitleColor }};">{{ sliderTitle1 }}</span>
+                            </h2>
+                            <br>
+                            <h3>
+                            	<span style="background-color: {{ sliderDespColor }};">{{ sliderDesp1 }}</span>
+                            </h3>
+                            <br>
+                        </div>
+                    </div><!-- /header-text -->
+			    </div>
+			    <div class="item">
+			    	<img src="{{ sliderimg2 }}" alt="{{ slideralt2 }}">
+			    	<!-- Static Header -->
+                    <div class="header-text hidden-xs">
+                        <div class="col-md-12 text-center">
+                            <h2>
+                                <span style="background-color: {{ sliderTitleColor }};">{{ sliderTitle2 }}</span>
+                            </h2>
+                            <br>
+                            <h3>
+                            	<span style="background-color: {{ sliderDespColor }};">{{ sliderDesp2 }}</span>
+                            </h3>
+                            <br>
+                        </div>
+                    </div><!-- /header-text -->
+			    </div>
+			    <div class="item">
+			    	<img src="{{ sliderimg3 }}" alt="{{ slideralt3 }}">
+			    	<!-- Static Header -->
+                    <div class="header-text hidden-xs">
+                        <div class="col-md-12 text-center">
+                            <h2>
+                                <span style="background-color: {{ sliderTitleColor }};">{{ sliderTitle3 }}</span>
+                            </h2>
+                            <br>
+                            <h3>
+                            	<span style="background-color: {{ sliderDespColor }};">{{ sliderDesp3 }}</span>
+                            </h3>
+                            <br>
+                        </div>
+                    </div><!-- /header-text -->
+			    </div>
+			</div>
+			<!-- Controls -->
+			<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+		    	<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+		    	<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div><!-- /carousel -->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      {{ page.header }}
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+        {{ page.primary_menu }}
+        {{ page.primary_menu_right }}
+    </div>
+  </div>
+</nav>
+
+  {{ page.breadcrumb }}
+
+  <main role="main" class="row">
+      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+      <div class="col-sm-2">
+          {% if page.sidebar_first %}
+            <aside class="layout-sidebar-first" role="complementary">
+              {{ page.sidebar_first }}
+            </aside>
+          {% endif %}
+      </div>
+      <div class="layout-content col-sm-8">
+        {{ page.content }}
+      </div>{# /.layout-content #}
+      <div class="col-sm-2">
+          {% if page.sidebar_second %}
+            <aside class="layout-sidebar-second" role="complementary">
+              {{ page.sidebar_second }}
+            </aside>
+          {% endif %}
+      </div>
+
+  </main>
+
+    <footer role="contentinfo" class="text-center row foot">
+      <div class="col-sm-3">
+        {{ page.footer1 }}
+      </div>
+        <div class="col-sm-3">
+        {{ page.footer2 }}
+      </div>
+      <div class="col-sm-3">
+        {{ page.footer3 }}
+      </div>  
+      <div class="col-sm-3">
+        {{ page.footer4 }}
+      </div>
+    </footer>
+  
+</div>{# /.layout-container #}

@@ -1,0 +1,28 @@
+global-styling:
+  Version: 1.x
+  css:
+    base:
+      css/custom/base.css: {}
+    layout:
+      css/custom/layout.css: {}
+    component:
+      css/custom/components.css: {}
+    theme:
+      css/custom/theme.css: {}
+  js:
+    js/custom.js: {}
+  
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+
+bootstrap-styling:
+  Version: 1.x
+  css:
+    theme:
+      css/Bootstrap/bootstrap.min.css: {}
+  js:
+    js/Bootstrap/bootstrap.min.js: {}
