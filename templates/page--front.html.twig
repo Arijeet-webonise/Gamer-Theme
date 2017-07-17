@@ -14,13 +14,16 @@
                     <!-- Static Header -->
                     <div class="header-text hidden-xs">
                         <div class="col-md-12 text-center">
+                            {% if sliderTitle1 != '' %}
                             <h2>
-                            	<span style="background-color: {{ sliderTitleColor }};">{{ sliderTitle1 }}</span>
+                            	<span style="background-color: rgba({{ sliderTitleHeaderR }},{{ sliderTitleHeaderG }}, {{ sliderTitleHeaderB }}, {{ sliderTitleHeaderA }}) ;">{{ sliderTitle1 }}</span>
                             </h2>
-                            <br>
+                            {% endif %}
+                            {% if sliderDesp1 != '' %}
                             <h3>
-                            	<span style="background-color: {{ sliderDespColor }};">{{ sliderDesp1 }}</span>
+                            	<span style="background-color: rgba({{ sliderTitleDespR }},{{ sliderTitleDespG }}, {{ sliderTitleDespB }}, {{ sliderTitleDespA }}) ;">{{ sliderDesp1 }}</span>
                             </h3>
+                            {% endif %}
                             <br>
                         </div>
                     </div><!-- /header-text -->
@@ -30,13 +33,16 @@
 			    	<!-- Static Header -->
                     <div class="header-text hidden-xs">
                         <div class="col-md-12 text-center">
+                            {% if sliderTitle2 != '' %}
                             <h2>
-                                <span style="background-color: {{ sliderTitleColor }};">{{ sliderTitle2 }}</span>
+                                <span style="background-color: rgba({{ sliderTitleHeaderR }},{{ sliderTitleHeaderG }}, {{ sliderTitleHeaderB }}, {{ sliderTitleHeaderA }}) ;">{{ sliderTitle2 }}</span>
                             </h2>
-                            <br>
+                            {% endif %}
+                            {% if sliderDesp2 != '' %}
                             <h3>
-                            	<span style="background-color: {{ sliderDespColor }};">{{ sliderDesp2 }}</span>
+                            	<span style="background-color: rgba({{ sliderTitleDespR }},{{ sliderTitleDespG }}, {{ sliderTitleDespB }}, {{ sliderTitleDespA }}) ;">{{ sliderDesp2 }}</span>
                             </h3>
+                            {% endif %}
                             <br>
                         </div>
                     </div><!-- /header-text -->
@@ -46,13 +52,16 @@
 			    	<!-- Static Header -->
                     <div class="header-text hidden-xs">
                         <div class="col-md-12 text-center">
+                            {% if sliderTitle3 != '' %}
                             <h2>
-                                <span style="background-color: {{ sliderTitleColor }};">{{ sliderTitle3 }}</span>
+                                <span style="background-color: rgba({{ sliderTitleHeaderR }},{{ sliderTitleHeaderG }}, {{ sliderTitleHeaderB }}, {{ sliderTitleHeaderA }}) ;">{{ sliderTitle3 }}</span>
                             </h2>
-                            <br>
+                            {% endif %}
+                            {% if sliderDesp2 != '' %}
                             <h3>
-                            	<span style="background-color: {{ sliderDespColor }};">{{ sliderDesp3 }}</span>
+                            	<span style="background-color: rgba({{ sliderTitleDespR }},{{ sliderTitleDespG }}, {{ sliderTitleDespB }}, {{ sliderTitleDespA }}) ;">{{ sliderDesp3 }}</span>
                             </h3>
+                            {% endif %}
                             <br>
                         </div>
                     </div><!-- /header-text -->

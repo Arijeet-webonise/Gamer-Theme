@@ -22,6 +22,14 @@ function gamer_theme_preprocess_block(&$variables) {
 		$variables['sliderimg'.$i] = theme_get_setting('sliderimg'.$i);
 		$variables['slideralt'.$i] = theme_get_setting('slideralt'.$i);
 	}
+	$variables['sliderTitleHeaderR'] = theme_get_setting('sliderTitleHeaderR');
+	$variables['sliderTitleHeaderG'] = theme_get_setting('sliderTitleHeaderG');
+	$variables['sliderTitleHeaderB'] = theme_get_setting('sliderTitleHeaderB');
+	$variables['sliderTitleHeaderA'] = theme_get_setting('sliderTitleHeaderA');
+  $variables['sliderTitleDespR'] = theme_get_setting('sliderTitleDespR');
+  $variables['sliderTitleDespG'] = theme_get_setting('sliderTitleDespG');
+  $variables['sliderTitleDespB'] = theme_get_setting('sliderTitleDespB');
+  $variables['sliderTitleDespA'] = theme_get_setting('sliderTitleDespA');
 }
 
 function gamer_theme_preprocess_page(&$variables) {
@@ -31,8 +39,14 @@ function gamer_theme_preprocess_page(&$variables) {
 		$variables['sliderimg'.$i] = theme_get_setting('sliderimg'.$i);
 		$variables['slideralt'.$i] = theme_get_setting('slideralt'.$i);
 	}
-	$variables['sliderTitleColor'] = theme_get_setting('sliderTitleColor');
-	$variables['sliderDespColor'] = theme_get_setting('sliderDespColor');
+	$variables['sliderTitleHeaderR'] = theme_get_setting('sliderTitleHeaderR');
+	$variables['sliderTitleHeaderG'] = theme_get_setting('sliderTitleHeaderG');
+	$variables['sliderTitleHeaderB'] = theme_get_setting('sliderTitleHeaderB');
+	$variables['sliderTitleHeaderA'] = theme_get_setting('sliderTitleHeaderA');
+  $variables['sliderTitleDespR'] = theme_get_setting('sliderTitleDespR');
+  $variables['sliderTitleDespG'] = theme_get_setting('sliderTitleDespG');
+  $variables['sliderTitleDespB'] = theme_get_setting('sliderTitleDespB');
+  $variables['sliderTitleDespA'] = theme_get_setting('sliderTitleDespA');
 }
 
 
@@ -47,17 +61,75 @@ function gamer_theme_form_system_theme_settings_alter(&$form, FormStateInterface
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,
   );
-  $form['Slider']['sliderTitleColor'] = array(
-    '#type'          => 'color',
+  $form['Slider']['sliderTitleStyle'] = array(
+    '#type'          => 'textarea',
     '#title'         => t('Slider Title Color'),
     '#default_value' => theme_get_setting('sliderTitleColor'),
-    '#description'   => t("Color Over Title Which will Apper in slider"),
+    '#description'   => t("Style Over Title Which will Apper in slider"),
   );
   $form['Slider']['sliderDespColor'] = array(
     '#type'          => 'color',
     '#title'         => t('Slider Desp Color'),
     '#default_value' => theme_get_setting('sliderDespColor'),
     '#description'   => t("Color Over Description Which will Apper in slider"),
+  );
+
+  $form['Slider'] = array(
+    '#type' => 'details',
+    '#title' => t('Slider'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+
+
+  $form['Slider']['sliderTitleHeaderR'] = array(
+    '#type'          => 'number',
+    '#title'         => t('Slider Title Color R'),
+    '#default_value' => theme_get_setting('sliderTitleHeaderR'),
+    '#description'   => t("Title Which will Apper in slider"),
+  );
+  $form['Slider']['sliderTitleHeaderG'] = array(
+    '#type'          => 'number',
+    '#title'         => t('Slider Title Color G'),
+    '#default_value' => theme_get_setting('sliderTitleHeaderG'),
+    '#description'   => t("Title Which will Apper in slider"),
+  );
+  $form['Slider']['sliderTitleHeaderB'] = array(
+    '#type'          => 'number',
+    '#title'         => t('Slider Title Color B'),
+    '#default_value' => theme_get_setting('sliderTitleHeaderB'),
+    '#description'   => t("Title Which will Apper in slider"),
+  );
+  $form['Slider']['sliderTitleHeaderA'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Slider Title Color A'),
+    '#default_value' => theme_get_setting('sliderTitleHeaderA'),
+    '#description'   => t("Title Which will Apper in slider"),
+  );
+
+  $form['Slider']['sliderTitleDespR'] = array(
+    '#type'          => 'number',
+    '#title'         => t('Slider Description Color R'),
+    '#default_value' => theme_get_setting('sliderTitleDespR'),
+    '#description'   => t("Description Which will Apper in slider"),
+  );
+  $form['Slider']['sliderTitleDespG'] = array(
+    '#type'          => 'number',
+    '#title'         => t('Slider Description Color G'),
+    '#default_value' => theme_get_setting('sliderTitleDespG'),
+    '#description'   => t("Description Which will Apper in slider"),
+  );
+  $form['Slider']['sliderTitleDespB'] = array(
+    '#type'          => 'number',
+    '#title'         => t('Slider Description Color B'),
+    '#default_value' => theme_get_setting('sliderTitleDespB'),
+    '#description'   => t("Description Which will Apper in slider"),
+  );
+  $form['Slider']['sliderTitleDespA'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Slider Description Color A'),
+    '#default_value' => theme_get_setting('sliderTitleDespA'),
+    '#description'   => t("Description Which will Apper in slider"),
   );
 
   for ($i=1; $i <= 3; $i++) { 

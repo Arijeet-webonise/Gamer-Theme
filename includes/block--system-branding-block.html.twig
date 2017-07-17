@@ -21,6 +21,9 @@
       {% if site_name %}
         <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" class="navbar-brand" rel="home">{{ site_name }}</a>
       {% endif %}
+      {% if site_slogan %}
+        <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" class="navbar-slogan" rel="home">{{ site_slogan }}</a>
+      {% endif %}
     </a>
 <div class="w3-left w3-margin-left">
 </div>
